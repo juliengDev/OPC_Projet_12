@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "3.0.1"
+    "prettier": "3.0.1",
+    "webpack-cli": "^5.1.4"
   }
 }

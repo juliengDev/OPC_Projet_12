@@ -1,8 +1,4 @@
-body {
-  background-color: burlywood;
-}
-
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -136,6 +132,46 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+#root {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* normal */
+/* bold */
+.header {
+  width: 100%;
+  height: auto;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+}
+.header-bloc {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 20px 30px;
+  /*
+  Flex-basis, 
+  Flex-grow  
+  Flex-shrink*/
+  flex: 1 1 30%;
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  flex: 3 1 70%;
+}
+.header-nav a:link,
+.header-nav a:visited,
+.header-nav a:hover,
+.header-nav a:active {
+  margin-right: 90px;
+  font-size: 1.125rem;
+  color: #fff;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,34 @@
+.header {
+  width: 100%;
+  height: auto;
+  background-color: $black;
+  display: flex;
+  align-items: center;
+
+  &-bloc {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 20px 30px;
+    /*
+    Flex-basis, 
+    Flex-grow  
+    Flex-shrink*/
+    flex: 1 1 30%;
+  }
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    flex: 3 1 70%;
+    // gap: 10.125rem;
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      margin-right: 90px;
+      font-size: $mediumFont;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
