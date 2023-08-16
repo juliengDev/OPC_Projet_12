@@ -1,0 +1,34 @@
+.aside {
+  display: flex;
+
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $black;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    &__icon {
+      width: 100%;
+      height: 100%;
+      padding: 1px;
+      background-color: $white;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
+  &__copyrigth {
+    color: $white;
+    width: 18.75rem;
+    margin-bottom: 180px;
+  }
+}
+.vertical-text {
+  display: inline-block;
+  transform: rotate(270deg);
+  font-size: 12px; /* Ajustez la taille de police selon vos besoins */
+}
