@@ -255,7 +255,6 @@ table {
 
 .aside {
   display: flex;
-  height: 100%;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
@@ -265,14 +264,22 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 70px;
+  gap: 20px;
   width: 80%;
 }
-.aside__nav__icon {
-  width: 100%;
-  height: 100%;
-  padding: 1px;
+.aside__nav span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 64px;
+  min-height: 64px;
   background-color: #fff;
   border-radius: 5px;
+}
+.aside__nav__icon {
+  padding: 1px;
+  background-color: #fff;
   text-align: center;
 }
 .aside__copyrigth {
@@ -282,7 +289,6 @@ table {
 }
 
 .vertical-text {
-  display: inline-block;
   transform: rotate(270deg);
   font-size: 12px; /* Ajustez la taille de police selon vos besoins */
 }
