@@ -76,6 +76,9 @@ class User {
   }
 }
 
+const users = []
+const userId = "12"
+
 async function fetchAndPopulateUsersArray(userId) {
   const mainData = await USER_MAIN_DATA.getInfo(userId)
   const userActivity = await USER_ACTIVITY.getInfo(userId)
@@ -101,8 +104,6 @@ async function fetchAndPopulateUsersArray(userId) {
   )
 }
 
-const users = []
-const userId = "18"
 await fetchAndPopulateUsersArray(userId)
 
 export default users

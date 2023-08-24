@@ -5,46 +5,6 @@ import {
   USER_PERFORMANCE,
 } from "../assets/mock/datas"
 
-/* 
-What properties do we need ?
-
-###### BANNER ######
-
-Identification : USER_MAIN_DATA 
-Prenom : userInfos.firstName
-
-###### CARDS ######
-
-Les key datas : USER_MAIN_DATA
-
-Calories : keyData.calorieCount
-Proteines : keyData.proteinCount
-Glucides : keyData.carbohydrateCount
-Lipides : keyData.lipidCount
-
-
-###### WIDGETS ######
-
-Widget Activite quotidienne  USER_ACTIVITY:
-Poids (kg) : sessions.kilogram
-Calories brulees (kCal) : sessions.calories
-
-
-Widget Duree moyenne des sessions USER_AVERAGE_SESSIONS:
-Jour : sessions.day
-Duree de la session : sessions.sessionLength
-
-
-Widget Performance : USER_PERFORMANCE
-Categorie : kind.1 kind.2 etc... kind.6
-Valeurs : data.value et data.kind
-
-
-Widget Score : USER_MAIN_DATA
-Score :  todayScore
-
-*/
-
 class User {
   constructor(
     id,
@@ -67,35 +27,54 @@ class User {
 
 const users = []
 
-// Créer des instances d'utilisateurs en utilisant les données fournies
-USER_MAIN_DATA.forEach((mainData) => {
-  const userId = mainData.id
-  const userInfos = mainData.userInfos
-  const todayScore = mainData.todayScore
-  const keyData = mainData.keyData
+const userId = USER_MAIN_DATA[0].id
+const userInfos = USER_MAIN_DATA[0].userInfos
+const todayScore = USER_MAIN_DATA[0].todayScore
+const keyData = USER_MAIN_DATA[0].keyData
+const activity = USER_ACTIVITY[0].sessions
+const averageSessions = USER_AVERAGE_SESSIONS[0].sessions
+const performance = USER_PERFORMANCE[0].data
 
-  const activity = USER_ACTIVITY.find(
-    (activityData) => activityData.userId === userId,
-  )
-  const averageSessions = USER_AVERAGE_SESSIONS.find(
-    (sessionData) => sessionData.userId === userId,
-  )
-  const performance = USER_PERFORMANCE.find(
-    (performanceData) => performanceData.userId === userId,
-  )
-
-  users.push(
-    new User(
-      userId,
-      userInfos,
-      todayScore,
-      keyData,
-      activity,
-      averageSessions,
-      performance,
-    ),
-  )
-})
-
-// Maintenant vous avez un tableau d'objets User représentant vos données
+users.push(
+  new User(
+    userId,
+    userInfos,
+    todayScore,
+    keyData,
+    activity,
+    averageSessions,
+    performance,
+  ),
+)
 export default users
+
+// In case you want to import all the entries from the database
+
+// USER_MAIN_DATA.forEach((mainData) => {
+//   const userId = mainData.id
+//   const userInfos = mainData.userInfos
+//   const todayScore = mainData.todayScore
+//   const keyData = mainData.keyData
+
+//   const activity = USER_ACTIVITY.find(
+//     (activityData) => activityData.userId === userId,
+//   )
+//   const averageSessions = USER_AVERAGE_SESSIONS.find(
+//     (sessionData) => sessionData.userId === userId,
+//   )
+//   const performance = USER_PERFORMANCE.find(
+//     (performanceData) => performanceData.userId === userId,
+//   )
+
+//   users.push(
+//     new User(
+//       userId,
+//       userInfos,
+//       todayScore,
+//       keyData,
+//       activity,
+//       averageSessions,
+//       performance,
+//     ),
+//   )
+// })
