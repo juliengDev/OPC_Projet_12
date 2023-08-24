@@ -1,3 +1,5 @@
+/* normal */
+/* bold */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -94,7 +96,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: "Roboto", sans-serif;
   vertical-align: baseline;
 }
 
@@ -165,7 +167,7 @@ table {
 
 .grid-item-2 {
   grid-column: 1/2;
-  grid-row: 3/15;
+  grid-row: 3/-1;
   background-color: #000;
 }
 
@@ -173,6 +175,7 @@ table {
   grid-column: 2/13;
   grid-row: 3/6;
   background-color: lightpink;
+  min-height: 18.75rem;
 }
 
 .grid-item-4 {
@@ -217,8 +220,6 @@ table {
   background-color: yellow;
 }
 
-/* normal */
-/* bold */
 .header {
   width: 100%;
   height: 100%;
@@ -291,6 +292,17 @@ table {
 .vertical-text {
   transform: rotate(270deg);
   font-size: 12px; /* Ajustez la taille de police selon vos besoins */
+}
+
+.banner {
+  padding: 70px 0 0 100px;
+}
+.banner--title {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.banner--firstname {
+  color: #ff0101;
 }
 
 /*# sourceMappingURL=style.css.map */
