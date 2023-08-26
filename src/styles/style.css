@@ -180,25 +180,21 @@ table {
 .grid-item-4 {
   grid-column: 2/10;
   grid-row: 4/6;
-  background-color: lightskyblue;
 }
 
 .grid-item-5 {
   grid-column: 2/5;
   grid-row: 6/8;
-  background-color: lightslategray;
 }
 
 .grid-item-6 {
   grid-column: 5/8;
   grid-row: 6/8;
-  background-color: lightsalmon;
 }
 
 .grid-item-7 {
   grid-column: 8/10;
   grid-row: 6/8;
-  background-color: lime;
 }
 
 .grid-item-8 {
@@ -362,6 +358,42 @@ table {
   font-size: medium;
   font-weight: 400;
   color: #74798c;
+}
+
+.dailyActivity {
+  position: relative;
+  padding-left: 35px;
+}
+.dailyActivity__title {
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #20253a;
+}
+
+.custom__tooltip {
+  background-color: #e60000;
+  color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+}
+.custom__tooltip-label {
+  padding: 0.8rem 0;
+}
+.custom__tooltip-cursor {
+  position: absolute;
+  height: 100%;
+  font-size: 10px;
+  text-align: center;
+  font-weight: 500;
+  padding: 1rem;
+}
+.custom__tooltip-cursor p {
+  padding: 0.8rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */
