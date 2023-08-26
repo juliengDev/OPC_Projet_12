@@ -4,8 +4,14 @@
   &--title {
     font-size: $xxx-large;
     font-weight: $medium;
+    margin-bottom: 40px;
   }
   &--firstname {
     color: $back-red-title;
+  }
+
+  &--message {
+    font-size: $mediumFont;
+    font-weight: $regular;
   }
 }

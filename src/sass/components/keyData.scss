@@ -1,0 +1,53 @@
+.keyData {
+  display: flex;
+  justify-content: center;
+  width: 258px;
+  background-color: $light-grey;
+  margin-bottom: 40px;
+  &__bloc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+
+    & span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 60px;
+      min-height: 60px;
+      border-radius: 5px;
+
+      & svg path {
+        color: #ff0000;
+      }
+    }
+    &-icon {
+      &-carb {
+        background-color: #ff000020;
+      }
+      &-prot {
+        background-color: #4ab7ff20;
+      }
+      &-glucid {
+        background-color: #fdcd0c20;
+      }
+      &-lipid {
+        background-color: #fd518220;
+      }
+    }
+    &-info {
+      padding-left: 24px;
+      h2 {
+        font-size: $large;
+        font-weight: $bold;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: medium;
+        font-weight: $regular;
+        color: #74798c;
+      }
+    }
+  }
+}
