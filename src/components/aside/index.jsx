@@ -3,8 +3,8 @@ import "../../styles/style.css"
 const Aside = () => {
   const copyright = "Copyright, SportSee 2020"
   return (
-    <aside className="aside">
-      <nav className="aside__nav">
+    <aside className="aside grid-item grid-item-2">
+      <div className="aside__nav__container">
         <span>
           <svg
             className="aside__nav__icon"
@@ -73,8 +73,8 @@ const Aside = () => {
             />
           </svg>
         </span>
-      </nav>
-      <small className="aside__copyrigth vertical-text">{copyright}</small>
+      </div>
+      <div className="aside__copyright">{copyright}</div>
     </aside>
   )
 }

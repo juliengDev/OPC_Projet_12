@@ -14,7 +14,7 @@ import {
   Legend,
   Bar,
 } from "recharts"
-const DailyActivity = ({ datas }) => {
+const BarChartActivity = ({ datas }) => {
   const data = datas[0].activity
   const chartData = data.map((entry, index) => ({
     jours: (index + 1).toString(),
@@ -25,7 +25,7 @@ const DailyActivity = ({ datas }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="custom__tooltip">
+        <div className="custom__tooltip ">
           <p className="custom__tooltip-label">{`${payload[0].value} kg`}</p>
           <p className="custom__tooltip-label">{`${payload[1].value} kCal`}</p>
           <div
@@ -39,10 +39,10 @@ const DailyActivity = ({ datas }) => {
   }
 
   return (
-    <section className="dailyActivity">
-      <h3 className="dailyActivity__title"> Activité quotidienne</h3>
+    <section className="barChart grid-item grid-item-4">
+      <h3 className="barChart__title"> Activité quotidienne</h3>
 
-      <div className="dailyActivity__chart">
+      <div className="barChart__chart">
         <BarChart width={720} height={320} data={chartData} barGap={8}>
           <CartesianGrid
             strokeDasharray="2 2"
@@ -99,4 +99,4 @@ const DailyActivity = ({ datas }) => {
   )
 }
 
-export default DailyActivity
+export default BarChartActivity

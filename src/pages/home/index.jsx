@@ -8,7 +8,10 @@ import Header from "../../components/header"
 import Aside from "../../components/aside"
 import Banner from "../../components/banner"
 import KeyDataContainer from "../../components/keydataContainer/keydataContainer"
-import DailyActivity from "../../components/dailyActivity/dailyActivity"
+import BarChartActivity from "../../components/barChartActivity"
+import LineChartActivity from "../../components/lineChartActivity"
+import RadarChartActivity from "../../components/radarChartActivity"
+import RadialBarChartActivity from "../../components/radialBarChartActivity"
 
 const Home = () => {
   const [datas, setDatas] = useState([])
@@ -21,22 +24,14 @@ const Home = () => {
 
   return (
     <div className="container">
-      <div className="grid-item grid-item-1">
-        <Header />
-      </div>
-      <div className="grid-item grid-item-2">
-        <Aside />
-      </div>
-      <div className="grid-item grid-item-3">
+      <Header />
+      <Aside />
+      <div className="dashboard-container">
         <Banner datas={users} />
-      </div>
-      <div className="grid-item grid-item-4">
-        <DailyActivity datas={users} />
-      </div>
-      <div className="grid-item grid-item-5"></div>
-      <div className="grid-item grid-item-6"></div>
-      <div className="grid-item grid-item-7"></div>
-      <div className="grid-item grid-item-8">
+        <BarChartActivity datas={users} />
+        <LineChartActivity datas={users} />
+        <RadarChartActivity />
+        <RadialBarChartActivity />
         <KeyDataContainer datas={users} />
       </div>
     </div>

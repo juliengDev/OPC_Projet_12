@@ -2,7 +2,7 @@ import "../../styles/style.css"
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header grid-item grid-item-1">
       <div className="header-bloc">
         <svg
           className="header-bloc__logo"
