@@ -1,73 +1,90 @@
-import "../../styles/style.css"
-import {
-  LineChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  Line,
-} from "recharts"
-const LineChartActivity = () => {
-  const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ]
+import React from "react"
+import { LineChart, XAxis, Tooltip, Line, YAxis, Legend } from "recharts"
+
+const getDayOfWeek = (day) => {
+  const daysOfWeek = ["L", "M", "M", "J", "V", "S", "D"]
+  return daysOfWeek[day - 1] || ""
+}
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    const sessionLength = payload[0].value
+    return (
+      <div className="lineChartActivity__tooltip">{`${sessionLength} min`}</div>
+    )
+  }
+  return null
+}
+
+const LineChartActivity = ({ datas }) => {
+  const data = datas[0].averageSessions
+  const chartData = data.map((item) => ({
+    day: item.day,
+    dayOfWeek: getDayOfWeek(item.day),
+    sessionLength: item.sessionLength,
+  }))
+
+  const ChartTitle = () => {
+    return (
+      <h3 className="lineChartActivity__title">Durée moyenne des sessions</h3>
+    )
+  }
+
   return (
     <section className="lineChartActivity grid-item grid-item-5">
       <LineChart
-        width={300}
-        height={250}
-        data={data}
+        width={258}
+        height={263}
+        data={chartData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        <Legend
+          layout=""
+          verticalAlign="top"
+          align="left"
+          content={<ChartTitle />}
+          width={170}
+        />
+        <XAxis
+          dataKey="dayOfWeek"
+          tickLine={false}
+          tick={{
+            fontFamily: "Roboto",
+            fill: "#fff",
+            fontSize: 16,
+            fontWeight: 500,
+          }}
+          axisLine={false}
+        />
+        <YAxis
+          dataKey="sessionLength"
+          domain={["dataMin - 20", "dataMax + 50"]}
+          hide={true}
+          axisLine={false}
+        />
+
+        <Tooltip
+          animationEasing="ease-out"
+          offset={40}
+          wrapperStyle={{ outline: "none" }}
+          content={<CustomTooltip />}
+          active={false}
+        />
+
+        <Line
+          type="natural"
+          dataKey="sessionLength"
+          dot={false}
+          stroke="#FFF"
+          strokeWidth={2}
+          isAnimationActive={false}
+          activeDot={{
+            fill: "white",
+            stroke: "rgba(255,255,255,0.3)",
+            strokeWidth: 10,
+            r: 5,
+          }}
+        />
       </LineChart>
     </section>
   )

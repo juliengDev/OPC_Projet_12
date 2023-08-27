@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+// import { useState, useEffect } from "react"
 import "../../styles/style.css"
 import users from "../../services/API_MOCK"
 // import users from "../../services/API"
@@ -14,13 +14,13 @@ import RadarChartActivity from "../../components/radarChartActivity"
 import RadialBarChartActivity from "../../components/radialBarChartActivity"
 
 const Home = () => {
-  const [datas, setDatas] = useState([])
+  // const [datas, setDatas] = useState([])
 
-  useEffect(() => {
-    setDatas(users)
-  }, [])
+  // useEffect(() => {
+  //   setDatas(users)
+  // }, [])
 
-  console.log(datas)
+  // console.log(datas)
 
   return (
     <div className="container">
@@ -30,8 +30,8 @@ const Home = () => {
         <Banner datas={users} />
         <BarChartActivity datas={users} />
         <LineChartActivity datas={users} />
-        <RadarChartActivity />
-        <RadialBarChartActivity />
+        <RadarChartActivity datas={users} />
+        <RadialBarChartActivity datas={users} />
         <KeyDataContainer datas={users} />
       </div>
     </div>
