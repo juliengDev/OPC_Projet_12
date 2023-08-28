@@ -1,3 +1,36 @@
 .radialBarChartActivity {
+  position: relative;
+  background-color: #fbfbfb;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
   font-size: 14px;
+  &__mainTitle {
+    position: absolute;
+    top: 2.5vw;
+    left: 2.5vw;
+    width: 10vw;
+    font-weight: $regular;
+    font-size: 15px;
+    line-height: 24px;
+    color: #20253a;
+  }
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.legend__titre {
+  font-size: 26px;
+  font-weight: bold;
+}
+.legend__titreSuite {
+  font-size: 14px;
+  padding-top: 5px;
+  color: #74798c;
+  // line-height: 26px;
 }

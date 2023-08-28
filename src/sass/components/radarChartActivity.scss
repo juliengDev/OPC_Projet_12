@@ -1,3 +1,10 @@
 .radarChartActivity {
+  background-color: $tertiary-color;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
   font-size: 14px;
+}
+.recharts-polar-angle-axis-tick {
+  font-size: 12px;
 }

@@ -1,79 +1,58 @@
 import "../../styles/style.css"
-import { RadialBarChart, RadialBar, Legend, Tooltip } from "recharts"
 
-const RadialBarChartActivity = () => {
-  const data = [
+// import { RadialBarChart, RadialBar, Legend } from "recharts"
+import { PieChart, Pie, Legend } from "recharts"
+const RadialBarChartActivity = ({ datas }) => {
+  const data = Math.round(datas[0].todayScore * 100) // Calcul du pourcentage
+  const formattedData = [
     {
-      name: "18-24",
-      uv: 31.47,
-      pv: 2400,
-      fill: "#8884d8",
-    },
-    {
-      name: "25-29",
-      uv: 26.69,
-      pv: 4567,
-      fill: "#83a6ed",
-    },
-    {
-      name: "30-34",
-      uv: -15.69,
-      pv: 1398,
-      fill: "#8dd1e1",
-    },
-    {
-      name: "35-39",
-      uv: 8.22,
-      pv: 9800,
-      fill: "#82ca9d",
-    },
-    {
-      name: "40-49",
-      uv: -8.63,
-      pv: 3908,
-      fill: "#a4de6c",
-    },
-    {
-      name: "50+",
-      uv: -2.63,
-      pv: 4800,
-      fill: "#d0ed57",
-    },
-    {
-      name: "unknow",
-      uv: 6.67,
-      pv: 4800,
-      fill: "#ffc658",
+      name: `${data}% de votre objectif`,
+      value: data,
     },
   ]
+  console.log(formattedData)
   return (
     <section className="radialBarChartActivity grid-item grid-item-7">
-      <RadialBarChart
-        width={300}
-        height={250}
-        innerRadius="10%"
-        outerRadius="80%"
-        data={data}
-        startAngle={180}
-        endAngle={0}
-      >
-        <RadialBar
-          minAngle={15}
-          label={{ fill: "#666", position: "insideStart" }}
-          background
-          clockWise={true}
-          dataKey="uv"
+      <h3 className="radialBarChartActivity__mainTitle">Score</h3>
+      <PieChart width={270} height={263}>
+        <Pie
+          data={[{ value: 100 }]}
+          cx="50%"
+          cy="50%"
+          innerRadius={0}
+          outerRadius={90}
+          startAngle={0}
+          endAngle={370}
+          dataKey="value"
+          fill="#fff"
+        />
+        <Pie
+          data={formattedData}
+          dataKey="value"
+          cx="50%"
+          cy="50%"
+          startAngle={190}
+          endAngle={150}
+          innerRadius={90}
+          outerRadius={100}
+          fill="#FE293B"
+          cornerRadius={10}
+          label
         />
         <Legend
-          iconSize={10}
-          width={120}
-          height={140}
+          content={() => (
+            <div className="legend">
+              <p className="legend__titre">{data}%</p>
+              <div className="legend__titreSuite">
+                <p>de votre</p>
+                <p>objectif</p>
+              </div>
+            </div>
+          )}
           layout="vertical"
           verticalAlign="middle"
-          align="right"
         />
-        <Tooltip />
-      </RadialBarChart>
+      </PieChart>
     </section>
   )
 }
