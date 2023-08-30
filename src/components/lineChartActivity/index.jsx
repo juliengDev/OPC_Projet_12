@@ -1,5 +1,13 @@
 import React from "react"
-import { LineChart, XAxis, Tooltip, Line, YAxis, Legend } from "recharts"
+import {
+  LineChart,
+  XAxis,
+  Tooltip,
+  Line,
+  YAxis,
+  Legend,
+  ResponsiveContainer,
+} from "recharts"
 
 const getDayOfWeek = (day) => {
   const daysOfWeek = ["L", "M", "M", "J", "V", "S", "D"]
@@ -32,60 +40,62 @@ const LineChartActivity = ({ datas }) => {
 
   return (
     <section className="lineChartActivity grid-item grid-item-5">
-      <LineChart
-        width={258}
-        height={263}
-        data={chartData}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-      >
-        <Legend
-          layout=""
-          verticalAlign="top"
-          align="left"
-          content={<ChartTitle />}
-          width={170}
-        />
-        <XAxis
-          dataKey="dayOfWeek"
-          tickLine={false}
-          tick={{
-            fontFamily: "Roboto",
-            fill: "#fff",
-            fontSize: 16,
-            fontWeight: 500,
-          }}
-          axisLine={false}
-        />
-        <YAxis
-          dataKey="sessionLength"
-          domain={["dataMin - 20", "dataMax + 50"]}
-          hide={true}
-          axisLine={false}
-        />
+      <div className="chart-container">
+        <ResponsiveContainer width={"100%"} height={"100%"}>
+          <LineChart
+            data={chartData}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <Legend
+              layout=""
+              verticalAlign="top"
+              align="left"
+              content={<ChartTitle />}
+              width={170}
+            />
+            <XAxis
+              dataKey="dayOfWeek"
+              tickLine={false}
+              tick={{
+                fontFamily: "Roboto",
+                fill: "#fff",
+                fontSize: 16,
+                fontWeight: 500,
+              }}
+              axisLine={false}
+            />
+            <YAxis
+              dataKey="sessionLength"
+              domain={["dataMin - 20", "dataMax + 50"]}
+              hide={true}
+              axisLine={false}
+            />
 
-        <Tooltip
-          animationEasing="ease-out"
-          offset={40}
-          wrapperStyle={{ outline: "none" }}
-          content={<CustomTooltip />}
-          active={false}
-        />
+            <Tooltip
+              animationEasing="ease-out"
+              offset={40}
+              wrapperStyle={{ outline: "none" }}
+              content={<CustomTooltip />}
+              active={false}
+            />
 
-        <Line
-          type="natural"
-          dataKey="sessionLength"
-          dot={false}
-          stroke="#FFF"
-          strokeWidth={2}
-          isAnimationActive={false}
-          activeDot={{
-            fill: "white",
-            stroke: "rgba(255,255,255,0.3)",
-            strokeWidth: 10,
-            r: 5,
-          }}
-        />
-      </LineChart>
+            <Line
+              type="natural"
+              dataKey="sessionLength"
+              dot={false}
+              stroke="#FFF"
+              strokeWidth={2}
+              isAnimationActive={false}
+              activeDot={{
+                fill: "white",
+                stroke: "rgba(255,255,255,0.3)",
+                strokeWidth: 10,
+                r: 5,
+              }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </section>
   )
 }

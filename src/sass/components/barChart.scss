@@ -1,5 +1,9 @@
 .barChart {
+  background-color: #fbfbfb;
+  min-width: 660px;
   position: relative;
+  padding: 5px;
+  border-radius: 5px;
 
   &__title {
     position: absolute;

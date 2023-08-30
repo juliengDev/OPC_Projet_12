@@ -26,14 +26,12 @@ const Home = () => {
     <div className="container">
       <Header />
       <Aside />
-      <div className="dashboard-container">
-        <Banner datas={users} />
-        <BarChartActivity datas={users} />
-        <LineChartActivity datas={users} />
-        <RadarChartActivity datas={users} />
-        <RadialBarChartActivity datas={users} />
-        <KeyDataContainer datas={users} />
-      </div>
+      <Banner datas={users} />
+      <BarChartActivity datas={users} />
+      <LineChartActivity datas={users} />
+      <RadarChartActivity datas={users} />
+      <RadialBarChartActivity datas={users} />
+      <KeyDataContainer datas={users} />
     </div>
   )
 }

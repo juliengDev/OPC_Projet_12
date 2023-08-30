@@ -6,6 +6,7 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   Radar,
+  ResponsiveContainer,
 } from "recharts"
 
 const RadarChartActivity = ({ datas }) => {
@@ -26,22 +27,24 @@ const RadarChartActivity = ({ datas }) => {
 
   return (
     <section className="radarChartActivity grid-item grid-item-6">
-      <RadarChart
-        outerRadius={90}
-        width={270}
-        height={263}
-        data={transformedData}
-      >
-        <PolarGrid stroke="#fff" />
-        <PolarAngleAxis dataKey="kind" tick={{ fill: "#fff" }} />
-        <PolarRadiusAxis angle={30} domain={[0, 150]} tick={false} />
-        <Radar
-          dataKey="value"
-          stroke="#FF0101"
-          fill="#FF0101"
-          fillOpacity={0.7}
-        />
-      </RadarChart>
+      <div className="chart-container">
+        <ResponsiveContainer width={"100%"} height={"100%"}>
+          <RadarChart
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            data={transformedData}
+          >
+            <PolarGrid stroke="#fff" />
+            <PolarAngleAxis dataKey="kind" tick={{ fill: "#fff" }} />
+            <PolarRadiusAxis angle={30} domain={[0, 150]} tick={false} />
+            <Radar
+              dataKey="value"
+              stroke="#FF0101"
+              fill="#FF0101"
+              fillOpacity={0.7}
+            />
+          </RadarChart>
+        </ResponsiveContainer>
+      </div>
     </section>
   )
 }

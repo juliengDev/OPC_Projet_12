@@ -1,9 +1,10 @@
 .keyData {
+  width: 90%;
   display: flex;
   justify-content: center;
-  width: 258px;
   background-color: $light-grey;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
+
   &__bloc {
     display: flex;
     justify-content: center;

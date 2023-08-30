@@ -2,8 +2,6 @@
   background-color: #e60000;
   border-radius: 5px;
   font-size: 14px;
-  padding: 15px;
-  margin: 15px;
 
   &__title {
     color: #ffffff;
@@ -21,20 +19,3 @@
     font-weight: 500;
   }
 }
-.recharts-responsive-container {
-  padding: 5px;
-}
-.recharts-line {
-  opacity: 0.5;
-}
-.recharts-cartesian-axis-tick {
-  opacity: 0.5;
-  font-size: 12px;
-}
-.recharts-cartesian-axis {
-  max-width: 229px;
-}
-
-// .recharts-xAxis {
-//   transform: translate(0, 6%);
-// }

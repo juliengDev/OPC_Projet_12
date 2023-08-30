@@ -13,6 +13,7 @@ import {
   Tooltip,
   Legend,
   Bar,
+  ResponsiveContainer,
 } from "recharts"
 const BarChartActivity = ({ datas }) => {
   const data = datas[0].activity
@@ -43,57 +44,59 @@ const BarChartActivity = ({ datas }) => {
       <h3 className="barChart__title"> Activité quotidienne</h3>
 
       <div className="barChart__chart">
-        <BarChart width={720} height={320} data={chartData} barGap={8}>
-          <CartesianGrid
-            strokeDasharray="2 2"
-            horizontal={true}
-            vertical={false}
-          />
-          <XAxis dataKey="jours" tickLine={false} axisLine={false} />
+        <ResponsiveContainer width={"100%"} height={250}>
+          <BarChart data={chartData}>
+            <CartesianGrid
+              strokeDasharray="2 2"
+              horizontal={true}
+              vertical={false}
+            />
+            <XAxis dataKey="jours" tickLine={false} axisLine={false} />
 
-          <YAxis
-            tickLine={false}
-            axisLine={false}
-            orientation="right"
-            yAxisId="Poids (kg)"
-            type="number"
-            dataKey="Poids (kg)"
-            domain={["dataMin - 2", "dataMax + 2"]}
-            allowDataOverflow={true}
-            allowDecimals={false}
-          />
-          <YAxis
-            yAxisId="Calories brûlées (kCal)"
-            type="number"
-            dataKey="Calories brûlées (kCal)"
-            domain={["dataMin - 20", "dataMax + 10"]}
-            hide={true}
-          />
+            <YAxis
+              tickLine={false}
+              axisLine={false}
+              orientation="right"
+              yAxisId="Poids (kg)"
+              type="number"
+              dataKey="Poids (kg)"
+              domain={["dataMin - 2", "dataMax + 2"]}
+              allowDataOverflow={true}
+              allowDecimals={false}
+            />
+            <YAxis
+              yAxisId="Calories brûlées (kCal)"
+              type="number"
+              dataKey="Calories brûlées (kCal)"
+              domain={["dataMin - 20", "dataMax + 10"]}
+              hide={true}
+            />
 
-          <Tooltip content={<CustomTooltip />} cursor={false} />
-          <Legend
-            verticalAlign="top"
-            align="right"
-            iconType="circle"
-            iconSize="8"
-            height={80}
-          />
-          <Bar
-            yAxisId="Poids (kg)"
-            dataKey="Poids (kg)"
-            fill="#282D30"
-            radius={[10, 10, 0, 0]}
-            barSize={10}
-          />
+            <Tooltip content={<CustomTooltip />} cursor={false} />
+            <Legend
+              verticalAlign="top"
+              align="right"
+              iconType="circle"
+              iconSize="8"
+              height={80}
+            />
+            <Bar
+              yAxisId="Poids (kg)"
+              dataKey="Poids (kg)"
+              fill="#282D30"
+              radius={[10, 10, 0, 0]}
+              barSize={10}
+            />
 
-          <Bar
-            yAxisId="Calories brûlées (kCal)"
-            dataKey="Calories brûlées (kCal)"
-            fill="#E60000"
-            radius={[10, 10, 0, 0]}
-            barSize={10}
-          />
-        </BarChart>
+            <Bar
+              yAxisId="Calories brûlées (kCal)"
+              dataKey="Calories brûlées (kCal)"
+              fill="#E60000"
+              radius={[10, 10, 0, 0]}
+              barSize={10}
+            />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </section>
   )
