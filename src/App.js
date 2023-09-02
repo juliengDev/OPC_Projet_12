@@ -1,4 +1,10 @@
 import React from "react"
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom"
 import "../src/styles/style.css"
 
 //page
@@ -6,7 +12,16 @@ import "../src/styles/style.css"
 import Home from "./pages/home"
 
 const App = () => {
-  return <Home />
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/user/12" />} />
+        <Route path="/user/:id" element={<Home />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </Router>
+  )
+  // return <Home />
 }
 
 export default App

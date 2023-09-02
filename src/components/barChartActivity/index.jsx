@@ -16,8 +16,9 @@ import {
   ResponsiveContainer,
 } from "recharts"
 const BarChartActivity = ({ datas }) => {
-  const data = datas[0].activity
-  const chartData = data.map((entry, index) => ({
+  const data = datas.activity
+
+  const chartData = data.sessions.map((entry, index) => ({
     jours: (index + 1).toString(),
     "Poids (kg)": entry.kilogram,
     "Calories brûlées (kCal)": entry.calories,

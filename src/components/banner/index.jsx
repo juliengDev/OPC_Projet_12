@@ -1,7 +1,6 @@
 import "../../styles/style.css"
 
-const Banner = ({ datas }) => {
-  const firstName = datas[0].userInfos.firstName
+const Banner = ({ firstName }) => {
   return (
     <section className="banner grid-item grid-item-3">
       <h1 className="banner--title">

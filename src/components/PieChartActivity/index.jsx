@@ -1,15 +1,15 @@
 import "../../styles/style.css"
 
 import { PieChart, Pie, Legend, ResponsiveContainer } from "recharts"
-const RadialBarChartActivity = ({ datas }) => {
-  const data = Math.round(datas[0].todayScore * 100) // Calcul du pourcentage
+const PieChartActivity = ({ datas }) => {
+  const data = Math.round(datas.todayScore * 100) // Calcul du pourcentage
   const formattedData = [
     {
       name: `${data}% de votre objectif`,
       value: data,
     },
   ]
-  console.log(formattedData)
+
   return (
     <section className="radialBarChartActivity grid-item grid-item-7">
       <div className="chart-container">
@@ -60,4 +60,4 @@ const RadialBarChartActivity = ({ datas }) => {
   )
 }
 
-export default RadialBarChartActivity
+export default PieChartActivity

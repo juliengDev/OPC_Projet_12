@@ -2,7 +2,7 @@ import "../../styles/style.css"
 
 const Keydata = ({ datas, type }) => {
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
-    datas[0].keyData
+    datas.keyData
 
   const formattedCalorieCount = new Intl.NumberFormat("en-US").format(
     calorieCount,

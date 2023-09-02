@@ -172,13 +172,13 @@ table {
 
 .grid-item-3 {
   max-width: 500px;
-  margin: 30px 0 30px 30px;
+  margin: 30px 0 60px 30px;
   grid-column: 2/-1;
   grid-row: 2/3;
 }
 
 .grid-item-4 {
-  margin: 0 30px 20px 30px;
+  margin: 0 30px 60px 30px;
   grid-column: 2/5;
   grid-row: 3/4;
 }
@@ -221,7 +221,10 @@ table {
 }
 
 .chart-container {
-  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
   height: 233px;
 }
 
@@ -294,6 +297,7 @@ table {
   transform: rotate(270deg);
   width: 200px;
   font-size: 12px;
+  padding-left: 30px;
 }
 
 .banner--title {

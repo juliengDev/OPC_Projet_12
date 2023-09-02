@@ -19,8 +19,9 @@ const RadarChartActivity = ({ datas }) => {
     6: "Cardio",
   }
 
-  const data = datas[0].performance
-  const transformedData = data.map((item) => ({
+  const dataPerformance = datas.performance
+
+  const transformedData = dataPerformance.data.map((item) => ({
     value: item.value,
     kind: kindMapping[item.kind],
   }))
