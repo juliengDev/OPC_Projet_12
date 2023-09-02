@@ -20,11 +20,11 @@ const BarChartActivity = ({ datas }) => {
   if (datas.activity.sessions) {
     // BACKEND API source
     data = datas.activity.sessions
-    console.log(data)
+    // console.log(data)
   } else {
     // MOCK API source
     data = datas.activity
-    console.log(data)
+    // console.log(data)
   }
   //data.sessions
   const chartData = data.map((entry, index) => ({
@@ -32,7 +32,7 @@ const BarChartActivity = ({ datas }) => {
     "Poids (kg)": entry.kilogram,
     "Calories brûlées (kCal)": entry.calories,
   }))
-  console.log(chartData)
+  // console.log(chartData)
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
