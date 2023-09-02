@@ -16,14 +16,23 @@ import {
   ResponsiveContainer,
 } from "recharts"
 const BarChartActivity = ({ datas }) => {
-  const data = datas.activity
-
-  const chartData = data.sessions.map((entry, index) => ({
+  let data
+  if (datas.activity.sessions) {
+    // BACKEND API source
+    data = datas.activity.sessions
+    console.log(data)
+  } else {
+    // MOCK API source
+    data = datas.activity
+    console.log(data)
+  }
+  //data.sessions
+  const chartData = data.map((entry, index) => ({
     jours: (index + 1).toString(),
     "Poids (kg)": entry.kilogram,
     "Calories brûlées (kCal)": entry.calories,
   }))
-
+  console.log(chartData)
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

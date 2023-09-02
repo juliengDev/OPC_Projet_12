@@ -56,5 +56,5 @@ USER_MAIN_DATA.forEach((mainData) => {
   )
 })
 
-console.log(users)
+// console.log(users)
 export default users

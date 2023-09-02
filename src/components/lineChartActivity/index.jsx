@@ -25,9 +25,15 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 const LineChartActivity = ({ datas }) => {
-  const data = datas.averageSessions
-  // console.log(data)
-  const chartData = data.sessions.map((item) => ({
+  let data
+
+  if (datas.averageSessions.sessions) {
+    data = datas.averageSessions.sessions
+  } else {
+    data = datas.averageSessions
+  }
+  // data.sessions.map
+  const chartData = data.map((item) => ({
     day: item.day,
     dayOfWeek: getDayOfWeek(item.day),
     sessionLength: item.sessionLength,

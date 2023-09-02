@@ -195,12 +195,19 @@ async function fetchAndPopulateUsersArray(userIds) {
     const userActivity = await USER_ACTIVITY.getInfo(userId)
     const userAverageSession = await USER_AVERAGE_SESSIONS.getInfo(userId)
     const userPerformance = await USER_PERFORMANCE.getInfo(userId)
+    // console.log("id :", mainData.data.id)
+    // console.log("userInfos :", mainData.data.userInfos)
+    // console.log("todayScore :", mainData.data.todayScore)
+    // console.log("keyData :", mainData.data.keyData)
 
     const { id, userInfos, todayScore, keyData } = mainData.data
 
     const activity = userActivity.data.sessions
+    // console.log("activity", activity)
     const averageSessions = userAverageSession.data.sessions
+    // console.log("userAverageSession", averageSessions)
     const performance = userPerformance.data
+    // console.log("performance", performance)
 
     users.push(
       new User(
@@ -218,6 +225,6 @@ async function fetchAndPopulateUsersArray(userIds) {
 
 await fetchAndPopulateUsersArray(userIds)
 if (users.length === 2) {
-  console.log(users)
+  // console.log(users)
 }
 export default users
