@@ -55,3 +55,9 @@
 .keyData:last-child {
   margin-bottom: 0;
 }
+
+@media only screen and (min-width: 1200px) {
+  .keyData {
+    margin-bottom: 30px;
+  }
+}

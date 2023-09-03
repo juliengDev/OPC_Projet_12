@@ -76,7 +76,7 @@ class User {
   }
 }
 
-const users = [] // Renommer la variable exporterUsers en exportedUsers
+const users = []
 const userIds = ["12", "18"]
 
 async function fetchAndPopulateUsersArray(userIds) {

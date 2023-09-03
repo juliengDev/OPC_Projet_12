@@ -50,7 +50,6 @@ const PieChartActivity = ({ datas }) => {
               outerRadius={100}
               fill="#FE293B"
               cornerRadius={10}
-              label
             />
             <Legend
               content={() => (

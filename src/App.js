@@ -24,7 +24,6 @@ const App = () => {
       </Routes>
     </Router>
   )
-  // return <Home />
 }
 
 export default App
