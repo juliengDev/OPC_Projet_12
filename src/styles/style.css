@@ -230,13 +230,28 @@ table {
   width: auto;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .error__msg {
-  margin-top: 100px;
+  margin-top: 250px;
   font-size: 48px;
   color: #ff0101;
+}
+.error__msg__h2 {
+  font-size: 24px;
+}
+
+.reset-a,
+.reset-a:hover,
+.reset-a:visited,
+.reset-a:focus,
+.reset-a:active {
+  margin-top: 40px;
+  color: #ff0101;
+  outline: 0;
+  cursor: pointer;
 }
 
 .header {
