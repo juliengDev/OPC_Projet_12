@@ -16,17 +16,21 @@ import PieChartActivity from "../../components/PieChartActivity"
 
 // console.log(users)
 const Home = () => {
-  const [datas, setDatas] = useState([])
-  const [loading, setLoading] = useState(true)
+  //useState : Gerer l'etat local d'un composant
+  const [datas, setDatas] = useState([]) // Variable contenant les datas
+  const [loading, setLoading] = useState(true) // Variable d'etat de chargement des donnees
+
+  // Le useParams hook renvoie un objet de paires clé / valeur des paramètres dynamiques de l'URL actuelle qui ont été appariés par le <Route path>.
   const { id } = useParams()
 
-  // Ce useEffect s'exécute après chaque rendu initial et à chaque fois que 'datas' change.
+  //  Le hook useEffect s'exécute après chaque rendu initial et à chaque fois qu'une modification
+  //  intervient dans la prop 'datas' ou le state.
   useEffect(() => {
     if (users) {
       setDatas(users)
       setLoading(false)
     }
-  }, [])
+  }, []) // Tableau de dependance vide : exécute un effet uniquement après le premier render de mon composant, ici recuperer les donnees de l'API
   // console.log(datas)
 
   if (loading) {
