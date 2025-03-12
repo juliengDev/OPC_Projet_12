@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import "../../styles/style.css"
-import users from "../../services/API_MOCK"
-// import users from "../../services/API"
+// import users from "../../services/API_MOCK"
+import users from "../../services/API"
 
 // components
 import Header from "../../components/header"

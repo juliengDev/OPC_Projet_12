@@ -1,71 +1,171 @@
-# Getting Started with Create React App
+# SportSee - Sports Analytics Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![SportSee Dashboard Preview](./preview.png)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+**SportSee** is an interactive sports coaching analytics dashboard built with React. This project visualizes user fitness data through advanced charts and diagrams, providing a comprehensive view of athletic performance and progress.
 
-### `yarn start`
+📊 **Key Features:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **User Profile Dashboard:** Detailed visualization of user's sports activities
+- **Interactive Charts:** Dynamic data representation using Recharts
+- **Data Integration:** Complete API integration with a Node.js backend
+- **Responsive Design:** Optimized for various screen sizes
+- **Comprehensive Documentation:** Includes JSDoc and PropTypes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `yarn test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Performance Analytics:**
 
-### `yarn build`
+  - Daily activity tracking and visualization
+  - Detailed session duration analysis
+  - Performance metrics across different activity types
+  - Nutrition tracking (calories, proteins, carbs, fats)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Interactive Dashboard:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Real-time data visualization
+  - Multiple chart types (bar charts, line charts, radar charts, radial charts)
+  - Intuitive user interface
+  - Tooltip information on hover
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **User Profiles:**
+  - Individual user data retrieval
+  - Personalized statistics and insights
+  - Historical data comparison
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠 Built With
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React** - Frontend framework
+- **React Router DOM** - Navigation management
+- **Recharts** - Data visualization library
+- **Fetch API** - HTTP requests handling
+- **CSS** - Styling
+- **PropTypes** - Type checking
+- **JSDoc** - Code documentation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📦 Installation
 
-## Learn More
+Follow these steps to set up the project locally:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Clone the repository**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   git clone https://github.com/yourusername/sportsee.git
+   cd sportsee
+   ```
 
-### Code Splitting
+2. **Install dependencies**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+3. **Set up the backend**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   git clone https://github.com/OpenClassrooms-Student-Center/SportSee.git backend
+   cd backend
+   yarn
+   ```
 
-### Making a Progressive Web App
+4. **Start the backend server**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   yarn dev
+   ```
 
-### Advanced Configuration
+5. **Start the frontend development server**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   cd ..
+   npm start
+   ```
 
-### Deployment
+The application should now be running on `http://localhost:3000` with the backend API available on `http://localhost:3001`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `yarn build` fails to minify
+## 🔄 API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Sportsee
+The application fetches data from a Node.js backend API with the following endpoints:
+
+- `GET /user/${userId}` - Retrieves user information
+- `GET /user/${userId}/activity` - Retrieves user activity data
+- `GET /user/${userId}/average-sessions` - Retrieves average session data
+- `GET /user/${userId}/performance` - Retrieves performance data
+
+Sample users available: 12 and 18
+
+---
+
+## 📊 Charts Implementation
+
+This project uses Recharts to implement various visualization components:
+
+- **Bar Chart:** Displays daily activity (weight and calories)
+- **Line Chart:** Shows average session duration
+- **Radar Chart:** Visualizes performance across different activity types
+- **Radial Bar Chart:** Represents achievement of daily goals
+
+---
+
+## 📝 Documentation
+
+This project includes:
+
+- **JSDoc:** Comprehensive documentation for all components and functions
+- **PropTypes:** Type checking for all component props
+- **README:** Detailed project information and setup instructions
+
+To generate the documentation:
+
+```bash
+npm run docs
+```
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/        # Reusable UI components
+├── pages/             # Application pages
+├── services/          # API calls and data handling
+├── utils/             # Helper functions
+├── assets/            # Static assets
+├── models/            # Data models
+└── App.js             # Main application component
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 👨‍💻 Author
+
+- 🌐 **Portfolio** - [Julien Gilbert](https://juliengilbert.com/)
+- 🏆 **GitHub** - [@juliengDev](https://github.com/juliengDev)
+- 💼 **LinkedIn** - [Julien Gilbert](https://www.linkedin.com/in/julien-gilbert-reactjs/)
+
+---
+
+🎯 _This project was completed as part of the Front-End Developer path at OpenClassrooms._
