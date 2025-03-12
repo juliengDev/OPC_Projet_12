@@ -51,6 +51,12 @@
 
 ---
 
+## ⚠️ Important Note
+
+This project requires a local backend to function properly as there is no live demo available. The backend is hosted locally when running the project.
+
+---
+
 ## 📦 Installation
 
 Follow these steps to set up the project locally:
@@ -103,6 +109,8 @@ The application fetches data from a Node.js backend API with the following endpo
 - `GET /user/${userId}/performance` - Retrieves performance data
 
 Sample users available: 12 and 18
+
+Backend repository: [https://github.com/OpenClassrooms-Student-Center/SportSee](https://github.com/OpenClassrooms-Student-Center/SportSee)
 
 ---
 
@@ -158,7 +166,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
----
+--
+
+🎯 _This project was completed as part of the Front-End Developer path at OpenClassrooms._
 
 ## 👨‍💻 Author
 
